@@ -28,15 +28,49 @@ const AboutUs = () => {
               </p>
 
               <div className='about__counter'>
-                <div>
+                <div className='d-flex gap-5 align-items-center'>
                   <div className='single__counter'>
                     <span className='counter'>
-                      <CountUp start={0} end={2} duration={80}
+                      <CountUp start={0} end={25} duration={2}
+                      suffix='K' />
+                    </span>
+                    <p className='counter__title'>
+                      Completed Projects
+                    </p>
+                  </div>
+
+                  <div className='single__counter'>
+                    <span className='counter'>
+                      <CountUp start={0} end={12} duration={2}
                       suffix='M' />
                     </span>
-
-                    <p className='counter__title'>Completed Projects</p>
+                    <p className='counter__title'>
+                      Patient Around World
+                    </p>
                   </div>
+                </div>
+
+                <div className='d-flex gap-5 align-items-center'>
+                  <div className='single__counter'>
+                    <span className='counter'>
+                      <CountUp start={0} end={25} duration={2}
+                      suffix='K' />
+                    </span>
+                    <p className='counter__title'>
+                      Completed Projects
+                    </p>
+                  </div>
+
+                  <div className='single__counter'>
+                    <span className='counter'>
+                      <CountUp start={0} end={12} duration={2}
+                      suffix='M' />
+                    </span>
+                    <p className='counter__title'>
+                      Patient Around World
+                    </p>
+                  </div>
+
                 </div>
               </div>
             </div>
