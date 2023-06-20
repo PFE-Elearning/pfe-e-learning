@@ -7,6 +7,8 @@ import HeroSection from "../components/Hero-Section/HeroSection";
 import Features from "../components/Feature-section/Feature";
 import FreeCourse from "../components/Free-course-section/FreeCourse";
 import Testimonial from "../components/Testimonial/Testimontials";
+import Newsletter from "../components/Newsletter/Newsletter";
+import Footer from "../components/Footer/Footer";
 const Home=()=>{
     return(
         <Fragment>
@@ -18,6 +20,8 @@ const Home=()=>{
         <Features />
         <FreeCourse />
         <Testimonial />
+        <Newsletter />
+        <Footer />
         </Fragment>
     );
 }
