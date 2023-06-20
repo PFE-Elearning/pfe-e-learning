@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'reactstrap'
 const Company = () => {
   return (
     <section>
+      <Container>
         <Row>
         <Col lg='2' md='3'>
           <h3 className='d-flex align-items-center gap-1'>
@@ -49,6 +50,7 @@ const Company = () => {
         </Col>
 
         </Row>
+      </Container>
     </section>
   )
 }
