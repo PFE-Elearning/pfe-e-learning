@@ -10,21 +10,18 @@ const HeroSection = () => {
         <Row>
           <Col lg='6' md='6'>
             <div className='hero__content'>
-              <h2>Anytime Anywhere Learn on your Suitable
+              <h2 className='mb-4'>
+                Anytime Anywhere <br /> Learn on your <br />Suitable
                 Schedule
               </h2>
-              <p>
-                Lorem dsfjdklfjlsdjflsdjflk
-                dsfljsdlfjsdkljfldsjfls
-                sdfljsfljsklfjsjflsjflsj
-                jsdfljsdfljkjkjksdfkljjjjjj
+              <p className='mb-4'>
+                Le Lorem Ipsum est simplement <br/> faux texte employé dans la  la mise  <br/> en page avant impression.<br/> Le Lorem Ipsum est le faux<br/>texte standard de l'imprimerie
               </p>
-
-              <div className='search'>
+            </div>
+            <div className='search'>
                 <input type='text' placeholder='Search' />
                 <button className='btn' >Search</button>
               </div>
-            </div>
           </Col>
 
           <Col>
