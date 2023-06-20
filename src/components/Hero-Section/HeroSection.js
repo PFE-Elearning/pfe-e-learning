@@ -18,7 +18,7 @@ const HeroSection = () => {
                 Le Lorem Ipsum est simplement <br/> faux texte employé dans la  la mise  <br/> en page avant impression.<br/> Le Lorem Ipsum est le faux<br/>texte standard de l'imprimerie
               </p>
             </div>
-            <div className='search'>
+            <div className='search d-flex justify-content-between w-75 p-1'>
               <input type='text' placeholder='Search' />
               <button className='btn' >Search</button>
             </div>
