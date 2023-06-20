@@ -19,9 +19,9 @@ const HeroSection = () => {
               </p>
             </div>
             <div className='search'>
-                <input type='text' placeholder='Search' />
-                <button className='btn' >Search</button>
-              </div>
+              <input type='text' placeholder='Search' />
+              <button className='btn' >Search</button>
+            </div>
           </Col>
 
           <Col>
