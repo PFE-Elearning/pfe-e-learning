@@ -28,15 +28,19 @@ const AboutUs = () => {
               </p>
 
               <div className='about__counter'>
-                <div className='single__counter'>
-                  <span className='counter'>
+                <div>
+                  <div className='single__counter'>
+                    <span className='counter'>
+                      <CountUp start={0} end={2} duration={80}
+                      suffix='M' />
+                    </span>
 
-                  </span>
+                    <p className='counter__title'>Completed Projects</p>
+                  </div>
                 </div>
               </div>
             </div>
           </Col>
-
         </Row>
       </Container>
     </section>
