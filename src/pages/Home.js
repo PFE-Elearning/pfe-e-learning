@@ -6,6 +6,7 @@ import Company from "../components/Company-section/Company"
 import HeroSection from "../components/Hero-Section/HeroSection";
 import Features from "../components/Feature-section/Feature";
 import FreeCourse from "../components/Free-course-section/FreeCourse";
+import Testimonial from "../components/Testimonial/Testimontials";
 const Home=()=>{
     return(
         <Fragment>
@@ -16,6 +17,7 @@ const Home=()=>{
         <ChooseUs />
         <Features />
         <FreeCourse />
+        <Testimonial />
         </Fragment>
     );
 }

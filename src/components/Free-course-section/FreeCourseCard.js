@@ -28,3 +28,4 @@ const FreeCourseCard = (props) => {
 };
 
 export default FreeCourseCard;
+
