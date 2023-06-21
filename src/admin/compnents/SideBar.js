@@ -21,6 +21,9 @@ const Sidebar = () => {
                 <Link to="/admin/blogs">Blogs</Link>
                 </Nav.Link>
                 <Nav.Link className="mt-3 fs-5 text-dark" >
+                <Link to="/admin/users">Users</Link>
+                </Nav.Link>
+                <Nav.Link className="mt-3 fs-5 text-dark" >
                 <Link to="/admin/settings">Settings</Link>
                 </Nav.Link>
             </Nav>

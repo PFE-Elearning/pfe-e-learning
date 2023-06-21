@@ -12,6 +12,7 @@ const Home=()=>{
             <Route path="/admin/dashboard" element={<AdminHome />}/>
             <Route path="/admin/formations" element={<AdminHome />}/>
             <Route path="/admin/settings" element={<AdminHome />}/>
+            <Route path="/admin/users" element={<AdminHome />}/>
             <Route path="/admin/blogs" element={<AdminHome />}/>
         </Routes>
         </Fragment>

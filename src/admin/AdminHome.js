@@ -24,6 +24,9 @@ const AdminHome=()=>{
               useLocation().pathname=='/admin/blogs' && <Blogs />
              }
              {
+              useLocation().pathname=='/admin/users' && <Users />
+             }
+             {
               useLocation().pathname=='/admin/settings' && <Settings />
              }
           </Col>
