@@ -7,11 +7,11 @@ export default function Table(props) {
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">name</th>
-                        <th scope="col">prenom</th>
-                        <th scope="col">city</th>
-                        <th scope="col">actions</th>
+                        <th scope="col" className="text-center">#</th>
+                        <th scope="col" className="text-center">name</th>
+                        <th scope="col" className="text-center">prenom</th>
+                        <th scope="col" className="text-center">city</th>
+                        <th scope="col" className="text-center">actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,12 +20,12 @@ export default function Table(props) {
                             return(
                                 <tr>
                                 <th scope="row">{element.id}</th>
-                                <td>{element.name}</td>
-                                <td>{element.prenom}</td>
-                                <td>{element.city}</td>
-                                <td>
-                                    <i className="mx-2">del</i>
-                                    <i>upd</i>
+                                <td className="text-center">{element.name}</td>
+                                <td className="text-center">{element.prenom}</td>
+                                <td className="text-center">{element.city}</td>
+                                <td className="text-center">
+                                    <i className="mx-5"><i className="fa-solid fa-trash text-danger"></i></i>
+                                    <i className="fa-solid fa-pen-to-square text-primary"></i>
                                 </td>
                                 
                             </tr>
