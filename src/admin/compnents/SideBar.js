@@ -1,6 +1,6 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 import './SideBar.css'
 const Sidebar = () => {
   return (
@@ -11,10 +11,18 @@ const Sidebar = () => {
                 </h3>
             </div>
             <Nav className="flex-column ">
-                <Nav.Link className=" fs-5 text-dark" href="#home">Home</Nav.Link>
-                <Nav.Link className="mt-3 fs-5 text-dark" href="#about">About</Nav.Link>
-                <Nav.Link className="mt-3 fs-5 text-dark" href="#services">Services</Nav.Link>
-                <Nav.Link className="mt-3 fs-5 text-dark" href="#contact">Contact</Nav.Link>
+                <Nav.Link className=" fs-5 text-dark" >
+                    <Link to="/admin/dashboard">Dashboard</Link>
+                </Nav.Link>
+                <Nav.Link className="mt-3 fs-5 text-dark" >
+                <Link to="/admin/formations">Formations</Link>
+                </Nav.Link>
+                <Nav.Link className="mt-3 fs-5 text-dark" >
+                <Link to="/admin/blogs">Blogs</Link>
+                </Nav.Link>
+                <Nav.Link className="mt-3 fs-5 text-dark" >
+                <Link to="/admin/settings">Settings</Link>
+                </Nav.Link>
             </Nav>
         </header>
   );

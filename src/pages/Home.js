@@ -1,29 +1,19 @@
 import react,{Fragment} from "react";
-import Courses from "../website/Courses-section/Courses";
-import ChooseUs from "../website/Choose-us/ChooseUs";
-import Header from '../website/Header/Header'
-import Company from "../website/Company-section/Company"
-import HeroSection from "../website/Hero-Section/HeroSection";
-import Features from "../website/Feature-section/Feature";
-import FreeCourse from "../website/Free-course-section/FreeCourse";
-import Testimonial from "../website/Testimonial/Testimontials";
-import Newsletter from "../website/Newsletter/Newsletter";
-import Footer from "../website/Footer/Footer";
+
 import AdminHome from "../admin/AdminHome";
+import WebsiteHome from "../website/WebsiteHome";
+import { Route,Routes, useLocation } from "react-router";
 const Home=()=>{
     return(
         <Fragment>
-        {/* <Header />
-        <HeroSection />
-        <Company />
-        <Courses />
-        <ChooseUs />
-        <Features />
-        <FreeCourse />
-        <Testimonial />
-        <Newsletter />
-        <Footer /> */}
-        <AdminHome />
+        <Routes>
+            <Route path="/home" element={<WebsiteHome />} />
+            <Route path="/" element={<AdminHome />} />
+            <Route path="/admin/dashboard" element={<AdminHome />}/>
+            <Route path="/admin/formations" element={<AdminHome />}/>
+            <Route path="/admin/settings" element={<AdminHome />}/>
+            <Route path="/admin/blogs" element={<AdminHome />}/>
+        </Routes>
         </Fragment>
     );
 }
