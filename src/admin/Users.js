@@ -21,14 +21,15 @@ const Users=()=>{
             'prenom':"hassani",
             'city':"agadir",
         },
-    ])
+    ]);
+    let [headings,setHeadings]=useState(Object.keys(data[0]));
     return(
         <div className="m-4">
             <h2 className="mt-3 mb-3">List of Users</h2>
             <div className="w-100 d-flex justify-content-end">
                 <button className="btn btn-success rounded-2 ">Add</button>
             </div>
-            <Table data={data} />
+            <Table data={data} headings={headings}/>
         </div>
     )
 }
