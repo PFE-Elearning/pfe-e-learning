@@ -24,9 +24,11 @@ export default function Table(props) {
                             return (
                                 <tr>
                                     <th scope="row">{element.id}</th>
-                                    <td className="text-center">{element.name}</td>
-                                    <td className="text-center">{element.prenom}</td>
-                                    <td className="text-center">{element.city}</td>
+                                    <td className="text-center">{element.first_name}</td>
+                                    <td className="text-center">{element.last_name}</td>
+                                    <td className="text-center">{element.email}</td>
+                                    <td className="text-center">{element.phone}</td>
+                                    <td className="text-center">{element.role}</td>
                                     <td className="text-center">
                                         <i className="mx-5"><i className="fa-solid fa-trash text-danger"></i></i>
                                         <i className="fa-solid fa-pen-to-square text-primary"></i>
