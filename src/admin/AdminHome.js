@@ -6,6 +6,7 @@ import { Route,Routes, useLocation } from 'react-router'
 import Blogs from './Blogs'
 import Settings from './Settings'
 import { Container, Row, Col } from 'reactstrap'
+import Users from './Users'
 const AdminHome=()=>{
     return (
         <Container fluid>
@@ -22,6 +23,9 @@ const AdminHome=()=>{
              }
              {
               useLocation().pathname=='/admin/blogs' && <Blogs />
+             }
+             {
+              useLocation().pathname=='/admin/users' && <Users />
              }
              {
               useLocation().pathname=='/admin/settings' && <Settings />
