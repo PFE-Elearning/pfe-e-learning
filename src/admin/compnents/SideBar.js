@@ -12,19 +12,19 @@ const Sidebar = () => {
             </div>
             <Nav className="flex-column ">
                 <Nav.Link className=" fs-5 text-dark" >
-                    <Link to="/admin/dashboard">Dashboard</Link>
+                    <Link className='text-decoration-none' to="/admin/dashboard" style={{ color: '#17bf9e' }}>Dashboard</Link>
                 </Nav.Link>
                 <Nav.Link className="mt-3 fs-5 text-dark" >
-                <Link to="/admin/formations">Formations</Link>
+                <Link className='text-decoration-none' to="/admin/formations" style={{ color: '#17bf9e' }}>Formations</Link>
                 </Nav.Link>
                 <Nav.Link className="mt-3 fs-5 text-dark" >
-                <Link to="/admin/blogs">Blogs</Link>
+                <Link className='text-decoration-none' to="/admin/blogs" style={{ color: '#17bf9e' }}>Blogs</Link>
                 </Nav.Link>
                 <Nav.Link className="mt-3 fs-5 text-dark" >
-                <Link to="/admin/users">Users</Link>
+                <Link className='text-decoration-none' to="/admin/users" style={{ color: '#17bf9e' }}>Users</Link>
                 </Nav.Link>
                 <Nav.Link className="mt-3 fs-5 text-dark" >
-                <Link to="/admin/settings">Settings</Link>
+                <Link className='text-decoration-none' to="/admin/settings" style={{ color: '#17bf9e' }}>Settings</Link>
                 </Nav.Link>
             </Nav>
         </header>
