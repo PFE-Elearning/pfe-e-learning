@@ -39,7 +39,7 @@ const Courses=()=>{
                     <Col lg='12' className='mb-5'>
                         <div className='course__top d-flex justify-content-between align-items-center'>
                             <div className='course__top_left w-50'>
-                                <h2>Our Popular Courses</h2>
+                                <h2>Our Formations</h2>
                                 <p>
                                 Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de ...
                                 </p>
