@@ -11,7 +11,7 @@ export default function Table(props) {
                         <th scope="col">name</th>
                         <th scope="col">prenom</th>
                         <th scope="col">city</th>
-                        <th scope="col" colSpan={2}>actions</th>
+                        <th scope="col">actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,8 +23,11 @@ export default function Table(props) {
                                 <td>{element.name}</td>
                                 <td>{element.prenom}</td>
                                 <td>{element.city}</td>
-                                <td>delete</td>
-                                <td>update</td>
+                                <td>
+                                    <i className="mx-2">del</i>
+                                    <i>upd</i>
+                                </td>
+                                
                             </tr>
                             )
                         })
