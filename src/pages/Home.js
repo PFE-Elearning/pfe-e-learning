@@ -1,14 +1,14 @@
 import react,{Fragment} from "react";
-import Courses from "../components/Courses-section/Courses";
-import ChooseUs from "../components/Choose-us/ChooseUs";
-import Header from '../components/Header/Header'
-import Company from "../components/Company-section/Company"
-import HeroSection from "../components/Hero-Section/HeroSection";
-import Features from "../components/Feature-section/Feature";
-import FreeCourse from "../components/Free-course-section/FreeCourse";
-import Testimonial from "../components/Testimonial/Testimontials";
-import Newsletter from "../components/Newsletter/Newsletter";
-import Footer from "../components/Footer/Footer";
+import Courses from "../website/Courses-section/Courses";
+import ChooseUs from "../website/Choose-us/ChooseUs";
+import Header from '../website/Header/Header'
+import Company from "../website/Company-section/Company"
+import HeroSection from "../website/Hero-Section/HeroSection";
+import Features from "../website/Feature-section/Feature";
+import FreeCourse from "../website/Free-course-section/FreeCourse";
+import Testimonial from "../website/Testimonial/Testimontials";
+import Newsletter from "../website/Newsletter/Newsletter";
+import Footer from "../website/Footer/Footer";
 const Home=()=>{
     return(
         <Fragment>
