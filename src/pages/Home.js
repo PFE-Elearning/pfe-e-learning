@@ -9,10 +9,11 @@ import FreeCourse from "../website/Free-course-section/FreeCourse";
 import Testimonial from "../website/Testimonial/Testimontials";
 import Newsletter from "../website/Newsletter/Newsletter";
 import Footer from "../website/Footer/Footer";
+import AdminHome from "../admin/AdminHome";
 const Home=()=>{
     return(
         <Fragment>
-        <Header />
+        {/* <Header />
         <HeroSection />
         <Company />
         <Courses />
@@ -21,7 +22,8 @@ const Home=()=>{
         <FreeCourse />
         <Testimonial />
         <Newsletter />
-        <Footer />
+        <Footer /> */}
+        <AdminHome />
         </Fragment>
     );
 }
