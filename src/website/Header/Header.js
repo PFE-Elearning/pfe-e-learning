@@ -12,11 +12,11 @@ const navLinks = [
     url: '#'
   },
   {
-    display: 'Courses',
+    display: 'Formations',
     url: '#'
   },
   {
-    display: 'Pages',
+    display: 'Courses',
     url: '#'
   },
   {
