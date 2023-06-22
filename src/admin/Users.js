@@ -21,7 +21,7 @@ const Users = () => {
             });
     }, []);
     const handleAddClick = () => {
-        setShowPopup(true); // Show the popup when Add button is clicked
+        setShowPopup(true); 
       };
     return (
         <div className="m-4">
@@ -38,11 +38,33 @@ const Users = () => {
           <div className="popup-content">
             <h3>Add User</h3>
             <form>
-              <label htmlFor="name">Name:</label>
-              <input type="text" id="name" name="name" />
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" />
-              {/* Add more form fields as needed */}
+              <div>
+                <label htmlFor="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" />
+              </div>
+              <div>
+                <label htmlFor="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" />
+              </div>
+              <div>
+                <label htmlFor="email">Email:</label>
+                <input type="email" id="email" name="email" />
+              </div>
+              <div>
+                <label htmlFor="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" />
+              </div>
+              <div>
+                <label htmlFor="password">Password:</label>
+                <input type="password" id="password" name="password" />
+              </div>
+              <div>
+                <label htmlFor="role">Role:</label>
+                <select id="role" name="role">
+                  <option value="admin">Admin</option>
+                  <option value="user">User</option>
+                </select>
+              </div>
               <button type="submit">Submit</button>
             </form>
             <button className="close-btn" onClick={() => setShowPopup(false)}>
