@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Table from "./compnents/Table";
-import { Container,Col,Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import './users.css';
 import axios from "axios";
 const Users = () => {
@@ -22,8 +22,8 @@ const Users = () => {
             });
     }, []);
     const handleAddClick = () => {
-        setShowPopup(true); 
-      };
+        setShowPopup(true);
+    };
     return (
         <div className="m-4">
             <h2 className="mt-3 mb-3">List of Users</h2>
@@ -35,69 +35,69 @@ const Users = () => {
                 <Table data={data} headings={headings} />
             </div>
             {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <h3>Add User</h3>
-            <form>
-              <Row>
-              <Col>
-              <div>
-                <label htmlFor="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" />
-              </div>
-              </Col>
-              <Col>
-              <div>
-                <label htmlFor="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" />
-              </div>
-              </Col>
-              </Row>
-             <Row>
-            <Col>
-            <div>
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" />
-              </div>
-              </Col>
-              <Col>
-              <div>
-                <label htmlFor="phone">Phone:</label>
-                <input type="text" id="phone" name="phone" />
-              </div>
-              </Col>
-             </Row>
-             <Row>
-             <Col>
-             <div>
-                <label htmlFor="password">Password:</label>
-                <input type="password" id="password" name="password" />
-              </div>
-             </Col>
-             <Col>
-             <div>
-                <label htmlFor="role">Role:</label>
-                <select id="role" name="role">
-                  <option value="admin">Admin</option>
-                  <option value="user">User</option>
-                </select>
-              </div>
-             </Col>
-             </Row>
-             <Row>
-             <Col>
-             <button type="submit">Submit</button>
-             </Col>
-           <Col>
-           <button className="close-btn" onClick={() => setShowPopup(false)}>
-              Close
-            </button>
-           </Col>
-             </Row>
-            </form>
-          </div>
-        </div>
-      )}
+                <div className="popup">
+                    <div className="popup-content">
+                        <h3>Add User</h3>
+                        <form>
+                            <Row>
+                                <Col>
+                                    <div>
+                                        <label htmlFor="firstName">First Name:</label>
+                                        <input type="text" id="firstName" name="firstName" />
+                                    </div>
+                                </Col>
+                                <Col>
+                                    <div>
+                                        <label htmlFor="lastName">Last Name:</label>
+                                        <input type="text" id="lastName" name="lastName" />
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <div>
+                                        <label htmlFor="email">Email:</label>
+                                        <input type="email" id="email" name="email" />
+                                    </div>
+                                </Col>
+                                <Col>
+                                    <div>
+                                        <label htmlFor="phone">Phone:</label>
+                                        <input type="text" id="phone" name="phone" />
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <div>
+                                        <label htmlFor="password">Password:</label>
+                                        <input type="password" id="password" name="password" />
+                                    </div>
+                                </Col>
+                                <Col>
+                                    <div>
+                                        <label htmlFor="role">Role:</label>
+                                        <select id="role" name="role">
+                                            <option value="admin">Admin</option>
+                                            <option value="user">User</option>
+                                        </select>
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <button type="submit">Submit</button>
+                                </Col>
+                                <Col>
+                                    <button className="close-btn" onClick={() => setShowPopup(false)}>
+                                        Close
+                                    </button>
+                                </Col>
+                            </Row>
+                        </form>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
