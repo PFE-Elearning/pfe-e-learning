@@ -26,7 +26,7 @@ export default function Table(props) {
                   {element[heading]}
                 </td>
               ))}
-              <td className="text-center">
+              <td className="text-center ">
                 <i className="mx-5">
                   <i className="fa-solid fa-trash text-danger"></i>
                 </i>
