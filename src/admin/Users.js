@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import Table from "./compnents/Table";
 import axios from "axios";
-const Users=()=>{
-    let [data,setData]=useState([]);
-    let [headings,setHeadings]=useState([]);
-    useEffect(()=>{
+const Users = () => {
+    let [data, setData] = useState([]);
+    let [headings, setHeadings] = useState([]);
+    
+    useEffect(() => {
         axios.get('http://127.0.0.1:8000/api/users')
         .then(json=>{
             setData(json.data.data);
@@ -18,7 +19,7 @@ const Users=()=>{
                 <button className="btn btn-success rounded-2">Add</button>
             </div>
             <div className="mt-5">
-            <Table data={data} headings={headings}/>
+                <Table data={data} headings={headings} />
             </div>
         </div>
     )
