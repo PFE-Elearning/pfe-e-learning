@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Table from "./compnents/Table";
-import { Container,Col,Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import './users.css';
 import axios from "axios";
 const Users = () => {
