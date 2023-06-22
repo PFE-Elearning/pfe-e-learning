@@ -1,23 +1,13 @@
 import { useEffect, useState } from "react";
 import Table from "./compnents/Table";
+import './users.css';
 import axios from "axios";
 const Users = () => {
     let [data, setData] = useState([]);
     let [headings, setHeadings] = useState([]);
-    
-    useEffect(() => {
-const Users = () => {
-    let [data, setData] = useState([]);
-    let [headings, setHeadings] = useState([]);
-    
+    const [showPopup, setShowPopup] = useState(false);
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/api/users')
-        .then(json=>{
-            setData(json.data.data);
-            // setHeadings(Object.keys(data[0]));
-        })
-    },[]);
-    return(
             .then(response => {
                 const jsonData = response.data.data;
                 setData(jsonData);
@@ -30,16 +20,59 @@ const Users = () => {
                 console.error(error);
             });
     }, []);
+    const handleAddClick = () => {
+        setShowPopup(true); 
+      };
     return (
         <div className="m-4">
             <h2 className="mt-3 mb-3">List of Users</h2>
             <div className="w-100 d-flex justify-content-end">
-                <button className="btn btn-success rounded-2">Add</button>
+                <button className="btn btn-success rounded-2" onClick={handleAddClick}>Add</button>
             </div>
             <div className="mt-5">
                 <Table data={data} headings={headings} />
                 <Table data={data} headings={headings} />
             </div>
+            {showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <h3>Add User</h3>
+            <form>
+              <div>
+                <label htmlFor="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" />
+              </div>
+              <div>
+                <label htmlFor="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" />
+              </div>
+              <div>
+                <label htmlFor="email">Email:</label>
+                <input type="email" id="email" name="email" />
+              </div>
+              <div>
+                <label htmlFor="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" />
+              </div>
+              <div>
+                <label htmlFor="password">Password:</label>
+                <input type="password" id="password" name="password" />
+              </div>
+              <div>
+                <label htmlFor="role">Role:</label>
+                <select id="role" name="role">
+                  <option value="admin">Admin</option>
+                  <option value="user">User</option>
+                </select>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
+            <button className="close-btn" onClick={() => setShowPopup(false)}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
         </div>
     )
 }
