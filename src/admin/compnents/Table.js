@@ -1,8 +1,8 @@
-import react from "react";
 
 export default function Table(props) {
     let data = props.data;
     let headings = props.headings;
+    let onDelete = props.onDelete ;
     return (
         <>
             <table class="table">
@@ -26,10 +26,11 @@ export default function Table(props) {
                   {element[heading]}
                 </td>
               ))}
-              <td className="text-center">
-                  <i className="fa-solid fa-trash text-danger mx-5" style={{cursor:'pointer'}}
-                  onClick={props.handleDelete}
-                >
+              <td className="text-center ">
+                <i className="mx-5">
+                    <i className="fa-solid fa-trash text-danger" 
+                      onClick={() => onDelete(element.id)} style={{cursor: 'pointer'}}>
+                    </i> 
                 </i>
                 <i className="fa-solid fa-pen-to-square text-primary" style={{cursor:'pointer'}}
                   onClick={props.handleUpdate}

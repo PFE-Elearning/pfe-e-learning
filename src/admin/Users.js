@@ -3,6 +3,7 @@ import Table from "./compnents/Table";
 import { Container, Col, Row } from "react-bootstrap";
 import './users.css';
 import axios from "axios";
+
 const Users = () => {
     let [data, setData] = useState([]);
     let [headings, setHeadings] = useState([]);
@@ -17,19 +18,39 @@ const Users = () => {
     const [role, setRole] = useState('admin');
     const [id,setId]=useState('');
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/users')
-            .then(response => {
-                const jsonData = response.data.data;
-                setData(jsonData);
-                if (jsonData.length > 0) {
-                    const keys = Object.keys(jsonData[0]);
-                    setHeadings(keys);
-                }
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        fetchData();
     }, []);
+
+    const fetchData = () => {
+        axios
+        .get("http://127.0.0.1:8000/api/users")
+        .then(response => {
+            const jsonData = response.data.data;
+            setData(jsonData);
+
+            if (jsonData.length > 0) {
+            const keys = Object.keys(jsonData[0]);
+            setHeadings(keys);
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    };
+
+    const handleDelete = id => {
+        axios
+        .delete(`http://127.0.0.1:8000/api/users/${id}`)
+        .then(response => {
+            console.log("Deleted successfully!");
+            // Refresh the data after deletion
+            fetchData();
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    };
+
     const handleAddClick = () => {
         setShowPopup(true);
 
@@ -66,30 +87,19 @@ const Users = () => {
             setPhone('');
             setRole('');
     }
-    const handleDelete=(event)=>{
-        const id=event.target.parentNode.parentNode.firstElementChild.innerText;
-        axios.delete('http://127.0.0.1:8000/api/users/'+id)
-            .then(response => {
-              const jsonData = response.data.users;
-              setData(jsonData);
-            })
-            .catch(error => {
-                console.error('Error adding user:', error);
-            });
-    }
     const handleUpdate=(event)=>{
-        setShowUpdatePopup(true);
-        setId(event.target.parentNode.parentNode.firstElementChild.innerText);
-        let user=data.filter(element=>{
-            return element.id==id;
-        });
-        console.log(user);
-        setFirstName(user[0].first_name);
-        setLastName(user[0].last_name);
-        setEmail(user[0].email);
-        setPassword(user[0].password);
-        setPhone(user[0].phone);
-    }
+      setShowUpdatePopup(true);
+      setId(event.target.parentNode.parentNode.firstElementChild.innerText);
+      let user=data.filter(element=>{
+          return element.id==id;
+      });
+      console.log(user);
+      setFirstName(user[0].first_name);
+      setLastName(user[0].last_name);
+      setEmail(user[0].email);
+      setPassword(user[0].password);
+      setPhone(user[0].phone);
+  }
     const updateUser=()=>{
         const UpdatedUser = {
             first_name: firstName,
@@ -118,7 +128,7 @@ const Users = () => {
                 <button className="btn btn-success rounded-2" onClick={handleAddClick}>Add</button>
             </div>
             <div className="mt-5">
-                <Table data={data} headings={headings} handleDelete={handleDelete} 
+                <Table data={data} headings={headings} onDelete={handleDelete} 
                 handleUpdate={handleUpdate}
                 />
             </div>
