@@ -27,9 +27,8 @@ export default function Table(props) {
                 </td>
               ))}
               <td className="text-center">
-                <i className="mx-5">
-                  <i className="fa-solid fa-trash text-danger"></i>
-                </i>
+                  <i className="fa-solid fa-trash text-danger mx-5"
+                  ></i>
                 <i className="fa-solid fa-pen-to-square text-primary"></i>
               </td>
             </tr>

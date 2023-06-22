@@ -7,6 +7,13 @@ const Users = () => {
     let [data, setData] = useState([]);
     let [headings, setHeadings] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
+    // post variables
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
+    const [role, setRole] = useState('admin');
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/api/users')
             .then(response => {
@@ -22,8 +29,40 @@ const Users = () => {
             });
     }, []);
     const handleAddClick = () => {
-        setShowPopup(true); 
+        setShowPopup(true);
+
+
       };
+    const addNewUser=()=>{
+        const newUser = {
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            phone: phone,
+            password: password,
+            role: role
+          };        
+          axios.post('http://127.0.0.1:8000/api/users', newUser)
+            .then(response => {
+              console.log('User added:', response.data);
+              const jsonData = response.data.users;
+              setData(jsonData);
+            })
+            .catch(error => {
+                // Handle error
+                console.error('Error adding user:', error);
+            });
+            setShowPopup(false);
+    }
+    const closePopup=()=>{
+        setShowPopup(false)
+            setFirstName('');
+            setLastName('');
+            setEmail('');
+            setPassword('');
+            setPhone('');
+            setRole('');
+    }
     return (
         <div className="m-4">
             <h2 className="mt-3 mb-3">List of Users</h2>
@@ -38,18 +77,18 @@ const Users = () => {
         <div className="popup">
           <div className="popup-content mb-5 h-75">
             <h3 className="text-center mb-4">Add User</h3>
-            <form className="d-flex flex-column justify-content-between h-75">
+            <div  className="d-flex flex-column justify-content-between h-75">
               <Row>
               <Col>
               <div>
                 <label htmlFor="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" />
+                <input type="text" id="firstName" name="firstName" value={firstName} onChange={e => setFirstName(e.target.value)} required/>
               </div>
               </Col>
               <Col>
               <div>
                 <label htmlFor="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" />
+                <input type="text" id="lastName" name="lastName" value={lastName} onChange={e => setLastName(e.target.value)}  required/>
               </div>
               </Col>
               </Row>
@@ -57,13 +96,13 @@ const Users = () => {
             <Col>
             <div>
                 <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" />
+                <input type="email" id="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required/>
               </div>
               </Col>
               <Col>
               <div>
                 <label htmlFor="phone">Phone:</label>
-                <input type="text" id="phone" name="phone" />
+                <input type="text" id="phone" name="phone" value={phone} onChange={e => setPhone(e.target.value)}  required/>
               </div>
               </Col>
              </Row>
@@ -71,30 +110,33 @@ const Users = () => {
              <Col>
              <div>
                 <label htmlFor="password">Password:</label>
-                <input type="password" id="password" name="password" />
+                <input type="password" id="password" name="password" value={password} onChange={e => setPassword(e.target.value)}  required/>
               </div>
              </Col>
              <Col>
              <div>
                 <label htmlFor="role">Role:</label>
-                <select id="role" name="role">
+                <select id="role" name="role" value={role} onChange={e => setRole(e.target.value)} required>
                   <option value="admin">Admin</option>
-                  <option value="user">User</option>
+                  <option value="student">Student</option>
+                  <option value="formateur">Formateur</option>
                 </select>
               </div>
              </Col>
              </Row>
              <Row>
            <Col>
-           <button className="btn bg-danger rounded-2 w-100 h-100" onClick={() => setShowPopup(false)}>
+           <button className="btn bg-danger rounded-2 w-100 h-100" onClick={closePopup}>
               Close
             </button>
            </Col>
              <Col>
-             <button className="btn w-100 bg-success rounded-2" type="submit">Submit</button>
+             <button className="btn w-100 bg-success rounded-2" onClick={
+                addNewUser
+             } >Submit</button>
              </Col>
              </Row>
-            </form>
+            </div>
           </div>
         </div>
       )}
