@@ -3,27 +3,49 @@ import Table from "./compnents/Table";
 import { Container, Col, Row } from "react-bootstrap";
 import './users.css';
 import axios from "axios";
+
 const Users = () => {
     let [data, setData] = useState([]);
     let [headings, setHeadings] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
-    useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/users')
-            .then(response => {
-                const jsonData = response.data.data;
-                setData(jsonData);
-                if (jsonData.length > 0) {
-                    const keys = Object.keys(jsonData[0]);
-                    setHeadings(keys);
-                }
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    }, []);
+   
     const handleAddClick = () => {
         setShowPopup(true);
     };
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = () => {
+        axios
+        .get("http://127.0.0.1:8000/api/users")
+        .then(response => {
+            const jsonData = response.data.data;
+            setData(jsonData);
+
+            if (jsonData.length > 0) {
+            const keys = Object.keys(jsonData[0]);
+            setHeadings(keys);
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    };
+
+    const handleDelete = id => {
+        axios
+        .delete(`http://127.0.0.1:8000/api/users/${id}`)
+        .then(response => {
+            console.log("Deleted successfully!");
+            // Refresh the data after deletion
+            fetchData();
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    };
+
     return (
         <div className="m-4">
             <h2 className="mt-3 mb-3">List of Users</h2>
@@ -31,8 +53,8 @@ const Users = () => {
                 <button className="btn btn-success rounded-2" onClick={handleAddClick}>Add</button>
             </div>
             <div className="mt-5">
-                <Table data={data} headings={headings} />
-                <Table data={data} headings={headings} />
+                <Table data={data} headings={headings} onDelete={handleDelete}/>
+                {/* <Table data={data} headings={headings} /> */}
             </div>
             {showPopup && (
                 <div className="popup">
