@@ -44,14 +44,16 @@ const Blogs = () => {
                             <Row>
                                 <Col>
                                     <div>
-                                        <label htmlFor="firstName">title :</label>
-                                        <input type="text" id="firstName" name="firstName" />
+                                        <label htmlFor="title">Title :</label>
+                                        <input type="text" id="title" name="title" />
                                     </div>
                                 </Col>
+                            </Row>
+                            <Row>
                                 <Col>
                                     <div>
-                                        <label htmlFor="lastName">Post :</label>
-                                        <input type="text" id="lastName" name="lastName" />
+                                        <label htmlFor="post">Post :</label>
+                                        <input type="text" id="post" name="post" />
                                     </div>
                                 </Col>
                             </Row>
