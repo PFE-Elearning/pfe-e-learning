@@ -8,7 +8,7 @@ const Users=()=>{
         axios.get('http://127.0.0.1:8000/api/users')
         .then(json=>{
             setData(json.data.data);
-            setHeadings(Object.keys(data[0]));
+            // setHeadings(Object.keys(data[0]));
         })
     },[]);
     return(
