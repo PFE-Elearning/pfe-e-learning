@@ -7,7 +7,8 @@ const Sidebar = () => {
         <header className="sidebar">
             <div className="h-25 d-flex align-items-center">
                 <h3 className='d-flex align-items-center justify-content-center'>
-                <i className="ri-pantone-line"></i> Learners.
+                <i className="ri-pantone-line "></i> 
+                <Link to='/home' className='text-decoration-none text-dark'>Learners.</Link>
                 </h3>
             </div>
             <Nav className="flex-column ">

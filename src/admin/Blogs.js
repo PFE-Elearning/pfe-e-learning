@@ -48,13 +48,21 @@ const Blogs = () => {
                                         <input type="text" id="firstName" name="firstName" />
                                     </div>
                                 </Col>
+                                
+                            </Row>
+                            <Row>
                                 <Col>
                                     <div>
-                                        <label htmlFor="lastName">Post :</label>
-                                        <input type="text" id="lastName" name="lastName" />
+                                        {/* <label htmlFor="firstName">title :</label> */}
+                                        <textarea className="w-100" id="firstName" name="firstName" placeholder=" creer un Post">
+
+                                        </textarea>
+                                        {/* <input type="text" id="firstName" name="firstName" /> */}
                                     </div>
                                 </Col>
+                                
                             </Row>
+                            
                             <Row>
                                 <Col>
                                     <button className="btn bg-danger rounded-2 w-100 h-100" onClick={() => setShowPopup(false)}>

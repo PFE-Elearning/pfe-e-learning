@@ -27,11 +27,11 @@ export default function Table(props) {
                 </td>
               ))}
               <td className="text-center">
-                  <i className="fa-solid fa-trash text-danger mx-5"
+                  <i className="fa-solid fa-trash text-danger mx-5" style={{cursor:'pointer'}}
                   onClick={props.handleDelete}
                 >
                 </i>
-                <i className="fa-solid fa-pen-to-square text-primary"
+                <i className="fa-solid fa-pen-to-square text-primary" style={{cursor:'pointer'}}
                   onClick={props.handleUpdate}
                 ></i>
               </td>
