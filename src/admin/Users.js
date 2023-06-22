@@ -31,6 +31,7 @@ const Users = () => {
             </div>
             <div className="mt-5">
                 <Table data={data} headings={headings} />
+                <Table data={data} headings={headings} />
             </div>
             {showPopup && (
         <div className="popup">
