@@ -28,8 +28,12 @@ export default function Table(props) {
               ))}
               <td className="text-center">
                   <i className="fa-solid fa-trash text-danger mx-5"
-                  ></i>
-                <i className="fa-solid fa-pen-to-square text-primary"></i>
+                  onClick={props.handleDelete}
+                >
+                </i>
+                <i className="fa-solid fa-pen-to-square text-primary"
+                  onClick={props.handleUpdate}
+                ></i>
               </td>
             </tr>
           ))}
