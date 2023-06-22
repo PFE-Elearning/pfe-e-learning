@@ -1,16 +1,28 @@
 import { useEffect, useState } from "react";
 import Table from "./compnents/Table";
 import axios from "axios";
+
 const Users=()=>{
     let [data,setData]=useState([]);
     let [headings,setHeadings]=useState([]);
-    useEffect(()=>{
+    useEffect(() => {
         axios.get('http://127.0.0.1:8000/api/users')
-        .then(json=>{
-            setData(json.data.data);
-            setHeadings(Object.keys(data[0]));
+        .then(response => {
+            const jsonData = response.data.data;
+            setData(jsonData);
+            
+            if (jsonData.length > 0) {
+            const keys = Object.keys(jsonData[0]);
+            setHeadings(keys);
+            // Perform actions with the keys and data
+            }
         })
-    },[]);
+        .catch(error => {
+            // Handle any errors that occur during the API request
+            console.error(error);
+        });
+  }, []);
+
     return(
         <div className="m-4">
             <h2 className="mt-3 mb-3">List of Users</h2>
