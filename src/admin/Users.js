@@ -36,9 +36,9 @@ const Users = () => {
             </div>
             {showPopup && (
         <div className="popup">
-          <div className="popup-content">
-            <h3>Add User</h3>
-            <form>
+          <div className="popup-content mb-5 h-75">
+            <h3 className="text-center mb-4">Add User</h3>
+            <form className="d-flex flex-column justify-content-between h-75">
               <Row>
               <Col>
               <div>
@@ -85,14 +85,14 @@ const Users = () => {
              </Col>
              </Row>
              <Row>
-             <Col>
-             <button type="submit">Submit</button>
-             </Col>
            <Col>
-           <button className="close-btn" onClick={() => setShowPopup(false)}>
+           <button className="btn bg-danger rounded-2 w-100 h-100" onClick={() => setShowPopup(false)}>
               Close
             </button>
            </Col>
+             <Col>
+             <button className="btn w-100 bg-success rounded-2" type="submit">Submit</button>
+             </Col>
              </Row>
             </form>
           </div>
